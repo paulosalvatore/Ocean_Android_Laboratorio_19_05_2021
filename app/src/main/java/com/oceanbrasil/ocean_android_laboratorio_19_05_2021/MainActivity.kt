@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 class MainActivity : AppCompatActivity() {
     companion object {
         const val NEW_SCREEN_REQUEST_CODE = 1
+        const val EXTRA_INFO = "EXTRA_INFO"
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -48,7 +49,7 @@ class MainActivity : AppCompatActivity() {
             // Lembrando que o conteúdo extra é opcional
             val newScreenIntent = Intent(this, DetailsActivity::class.java)
 
-            newScreenIntent.putExtra("EXTRA_INFO", tvResult.text.toString())
+            newScreenIntent.putExtra(EXTRA_INFO, tvResult.text.toString())
 
             startActivityForResult(newScreenIntent, NEW_SCREEN_REQUEST_CODE)
 

@@ -16,7 +16,7 @@ class DetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
 
-        val extraInfo = intent.getStringExtra("EXTRA_INFO")
+        val extraInfo = intent.getStringExtra(MainActivity.EXTRA_INFO)
 
         val tvInfo = findViewById<TextView>(R.id.tvInfo)
         tvInfo.text = extraInfo
