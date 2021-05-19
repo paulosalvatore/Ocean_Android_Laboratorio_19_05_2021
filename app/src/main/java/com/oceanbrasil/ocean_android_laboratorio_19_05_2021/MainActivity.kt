@@ -1,5 +1,6 @@
 package com.oceanbrasil.ocean_android_laboratorio_19_05_2021
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -14,11 +15,14 @@ class MainActivity : AppCompatActivity() {
         inicializarFormulario()
 
         val btSendAnotherScreen = findViewById<Button>(R.id.btSendAnotherScreen)
+        val tvResult = findViewById<TextView>(R.id.tvResult)
 
         btSendAnotherScreen.setOnClickListener {
-//            val newScreenIntent = Intent(this, DetailsActivity::class.java)
-//
-//            startActivity(newScreenIntent)
+            val newScreenIntent = Intent(this, DetailsActivity::class.java)
+
+            newScreenIntent.putExtra("EXTRA_INFO", tvResult.text.toString())
+
+            startActivity(newScreenIntent)
 
 //            // Call
 //            val intent = Intent(Intent.ACTION_DIAL)
