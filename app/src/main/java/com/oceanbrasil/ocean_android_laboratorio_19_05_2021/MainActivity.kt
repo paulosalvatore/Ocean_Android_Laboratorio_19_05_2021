@@ -1,5 +1,6 @@
 package com.oceanbrasil.ocean_android_laboratorio_19_05_2021
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -8,6 +9,24 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
+    companion object {
+        const val NEW_SCREEN_REQUEST_CODE = 1
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == NEW_SCREEN_REQUEST_CODE) {
+            val tvResult = findViewById<TextView>(R.id.tvResult)
+
+            if (resultCode == Activity.RESULT_OK) {
+                tvResult.text = data?.getStringExtra("DETAILS_RESULT")
+            } else if (resultCode == Activity.RESULT_CANCELED) {
+                tvResult.text = "Ação cancelada."
+            }
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -18,11 +37,20 @@ class MainActivity : AppCompatActivity() {
         val tvResult = findViewById<TextView>(R.id.tvResult)
 
         btSendAnotherScreen.setOnClickListener {
+//            // Iniciando uma Activity com conteúdo extra
+//            val newScreenIntent = Intent(this, DetailsActivity::class.java)
+//
+//            newScreenIntent.putExtra("EXTRA_INFO", tvResult.text.toString())
+//
+//            startActivity(newScreenIntent)
+
+            // Iniciando uma Activity com conteúdo extra e que esteja aguardando um resultado
+            // Lembrando que o conteúdo extra é opcional
             val newScreenIntent = Intent(this, DetailsActivity::class.java)
 
             newScreenIntent.putExtra("EXTRA_INFO", tvResult.text.toString())
 
-            startActivity(newScreenIntent)
+            startActivityForResult(newScreenIntent, NEW_SCREEN_REQUEST_CODE)
 
 //            // Call
 //            val intent = Intent(Intent.ACTION_DIAL)
