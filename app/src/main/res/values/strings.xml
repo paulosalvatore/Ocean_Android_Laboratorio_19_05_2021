@@ -8,4 +8,5 @@
     <string name="insert_a_valid_lastname">Insert a valid last name!</string>
     <string name="insert_a_valid_age">Insert a valid age!</string>
     <string name="result_text">Hello, %1$s %2$s, you are %3$s years old!</string>
+    <string name="action_canceled">Action canceled.</string>
 </resources>

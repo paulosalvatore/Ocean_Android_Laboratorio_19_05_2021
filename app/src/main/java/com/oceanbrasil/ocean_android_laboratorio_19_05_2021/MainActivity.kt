@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
             if (resultCode == Activity.RESULT_OK) {
                 tvResult.text = data?.getStringExtra(DetailsActivity.DETAILS_RESULT)
             } else if (resultCode == Activity.RESULT_CANCELED) {
-                tvResult.text = "Ação cancelada."
+                tvResult.text = getString(R.string.action_canceled)
             }
         }
     }

@@ -9,4 +9,5 @@
     <string name="insert_a_valid_lastname">Insira um sobrenome válido!</string>
     <string name="insert_a_valid_age">Insira uma idade válida!</string>
     <string name="result_text">Olá, %1$s %2$s, você tem %3$s anos de idade!</string>
+    <string name="action_canceled">Ação cancelada.</string>
 </resources>
