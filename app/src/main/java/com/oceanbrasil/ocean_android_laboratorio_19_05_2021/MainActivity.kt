@@ -1,12 +1,47 @@
 package com.oceanbrasil.ocean_android_laboratorio_19_05_2021
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val etName = findViewById<EditText>(R.id.etName)
+        val etLastName = findViewById<EditText>(R.id.etLastName)
+        val etAge = findViewById<EditText>(R.id.etAge)
+        val btSend = findViewById<Button>(R.id.btSend)
+        val tvResult = findViewById<TextView>(R.id.tvResult)
+
+        btSend.setOnClickListener {
+            val name = etName.text
+            val lastName = etLastName.text
+            val age = etAge.text
+
+            val isNameValid = name.isNotBlank()
+            val isLastNameValid = lastName.isNotBlank()
+            val isAgeValid = age.isNotBlank()
+
+            if (!isNameValid) {
+                etName.error = getString(R.string.insert_a_valid_name)
+            }
+
+            if (!isLastNameValid) {
+                etLastName.error = getString(R.string.insert_a_valid_lastname)
+            }
+
+            if (!isAgeValid) {
+                etAge.error = getString(R.string.insert_a_valid_age)
+            }
+
+            if (isNameValid && isLastNameValid && isAgeValid) {
+                tvResult.text = getString(R.string.result_text, name, lastName, age)
+            }
+        }
 
         /*
          * Correção do Desafio:

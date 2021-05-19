@@ -4,4 +4,8 @@
     <string name="insert_your_last_name">Insert your last name...</string>
     <string name="insert_your_age">Insert your age...</string>
     <string name="send">Send</string>
+    <string name="insert_a_valid_name">Insert a valid name!</string>
+    <string name="insert_a_valid_lastname">Insert a valid last name!</string>
+    <string name="insert_a_valid_age">Insert a valid age!</string>
+    <string name="result_text">Hello, %1$s %2$s, you are %3$s years old!</string>
 </resources>
