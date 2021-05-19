@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Ocean_Android_Laboratorio_19_05_2021</string>
-    <string name="insert_your_name">Insira o seu nome...</string>
-    <string name="insert_your_last_name">Insira o seu sobrenome...</string>
-    <string name="insert_your_age">Insira a sua idade...</string>
+    <string name="insert_your_name">Insira o seu nome…</string>
+    <string name="insert_your_last_name">Insira o seu sobrenome…</string>
+    <string name="insert_your_age">Insira a sua idade…</string>
     <string name="send">Enviar</string>
     <string name="insert_a_valid_name">Insira um nome válido!</string>
     <string name="insert_a_valid_lastname">Insira um sobrenome válido!</string>
