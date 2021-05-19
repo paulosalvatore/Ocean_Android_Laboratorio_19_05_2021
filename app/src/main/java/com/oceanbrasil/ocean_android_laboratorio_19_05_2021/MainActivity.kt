@@ -1,5 +1,6 @@
 package com.oceanbrasil.ocean_android_laboratorio_19_05_2021
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -11,6 +12,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        inicializarFormulario()
+
+        val btSendAnotherScreen = findViewById<Button>(R.id.btSendAnotherScreen)
+
+        btSendAnotherScreen.setOnClickListener {
+            val newScreenIntent = Intent(this, DetailsActivity::class.java)
+
+            startActivity(newScreenIntent)
+        }
+    }
+
+    private fun inicializarFormulario() {
         val etName = findViewById<EditText>(R.id.etName)
         val etLastName = findViewById<EditText>(R.id.etLastName)
         val etAge = findViewById<EditText>(R.id.etAge)
