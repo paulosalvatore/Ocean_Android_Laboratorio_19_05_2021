@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
             val tvResult = findViewById<TextView>(R.id.tvResult)
 
             if (resultCode == Activity.RESULT_OK) {
-                tvResult.text = data?.getStringExtra("DETAILS_RESULT")
+                tvResult.text = data?.getStringExtra(DetailsActivity.DETAILS_RESULT)
             } else if (resultCode == Activity.RESULT_CANCELED) {
                 tvResult.text = "Ação cancelada."
             }

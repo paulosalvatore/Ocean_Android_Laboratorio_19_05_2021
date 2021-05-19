@@ -8,6 +8,10 @@ import android.widget.Button
 import android.widget.TextView
 
 class DetailsActivity : AppCompatActivity() {
+    companion object {
+        const val DETAILS_RESULT = "DETAILS_RESULT"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
@@ -22,7 +26,7 @@ class DetailsActivity : AppCompatActivity() {
 
         btOk.setOnClickListener {
             val resultIntent = Intent()
-            resultIntent.putExtra("DETAILS_RESULT", "Info na DetailsActivity")
+            resultIntent.putExtra(DETAILS_RESULT, "Info na DetailsActivity")
 
             setResult(Activity.RESULT_OK, resultIntent)
 
