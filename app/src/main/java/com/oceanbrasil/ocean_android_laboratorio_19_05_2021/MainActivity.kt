@@ -1,6 +1,5 @@
 package com.oceanbrasil.ocean_android_laboratorio_19_05_2021
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -17,9 +16,19 @@ class MainActivity : AppCompatActivity() {
         val btSendAnotherScreen = findViewById<Button>(R.id.btSendAnotherScreen)
 
         btSendAnotherScreen.setOnClickListener {
-            val newScreenIntent = Intent(this, DetailsActivity::class.java)
+//            val newScreenIntent = Intent(this, DetailsActivity::class.java)
+//
+//            startActivity(newScreenIntent)
 
-            startActivity(newScreenIntent)
+//            // Call
+//            val intent = Intent(Intent.ACTION_DIAL)
+//            intent.data = Uri.parse("tel:987654321")
+//            startActivity(intent)
+
+//            // SMS
+//            val number = "987654321"
+//            val intent = Intent(Intent.ACTION_VIEW, Uri.fromParts("sms", number, null))
+//            startActivity(intent)
         }
     }
 
